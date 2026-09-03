@@ -1,135 +1,166 @@
-# site_glonass
+# GPS Monitoring Website
 
-A static website for GLONASS/GPS vehicle monitoring services, fleet solutions, and equipment catalog pages.
+A commercial website for a company providing GLONASS/GPS vehicle monitoring, fleet management solutions, and related equipment.
 
-The project is built with [Minista](https://minista.qranoko.jp/), React components, SCSS styles, and client-side JavaScript modules for interactive UI behavior.
+The project includes service pages, industry solutions, an equipment catalog, interactive forms, filtering, cart functionality, and reusable UI components.
 
-## Stack
+## Features
 
-- Minista 3
-- SCSS / PostCSS
-- ESLint, Stylelint, Prettier
-- IMask for form input masks
+* Responsive multi-page website
+* Service and fleet solution pages
+* Equipment catalog
+* Dynamic equipment pages
+* Catalog filtering
+* Shopping cart functionality
+* Forms with client-side validation and input masks
+* Modal windows
+* Sliders and image lightbox
+* Tabs and accordions
+* Interactive region map
+* Cookie notification
+* Responsive navigation
+* SEO metadata and sitemap
+* Custom 404 and legal pages
 
-## Requirements
+## My Role
 
-- Node.js 24 or a compatible current Node.js version
-- npm
+I developed and maintained the frontend part of the website.
 
-## Installation
+My work included:
 
-```bash
-npm ci
-```
+* Building responsive pages and reusable UI components
+* Implementing client-side JavaScript logic
+* Developing forms and validation
+* Implementing catalog filtering and cart functionality
+* Creating interactive UI elements such as modals, sliders, tabs, and accordions
+* Structuring page and catalog data separately from UI components
+* Working with responsive and cross-browser layouts
+* Improving and refactoring existing frontend code
+* Preparing the project for production builds and deployment
 
-## Scripts
+## Tech Stack
 
-```bash
-npm start
-```
-
-Starts the local Minista development server.
-
-```bash
-npm run build
-```
-
-Builds the production version of the website into the `dist` directory.
-
-```bash
-npm run preview
-```
-
-Starts a local preview server for the built website.
-
-```bash
-npm run lint
-```
-
-Runs JavaScript, SCSS, and formatting checks.
-
-```bash
-npm run lint:fix
-```
-
-Automatically fixes supported linting and formatting issues.
+* Minista 3
+* JavaScript
+* React components
+* HTML5
+* SCSS
+* BEM
+* PostCSS
+* IMask
+* ESLint
+* Stylelint
+* Prettier
+* Git
+* Docker
 
 ## Project Structure
 
 ```text
 src/
   assets/       fonts, images, icons, and favicons
-  components/   small reusable components
-  constants/    shared project constants
-  layouts/      base layout components: Header, Content, Footer
-  modules/      client-side JavaScript modules for interactivity
+  components/   reusable UI components
+  constants/    shared constants
+  layouts/      Header, Content, Footer
+  modules/      client-side JavaScript modules
   page-data/    page and catalog data
-  pages/        website pages and Minista dynamic routes
+  pages/        pages and dynamic routes
   sections/     larger page sections
-  styles/       global styles, variables, mixins, and helpers
+  styles/       global styles, variables, mixins, helpers
   utils/        utility functions
 ```
 
 ## Pages
 
-Main pages are located in `src/pages`:
+The project contains:
 
-- home page;
-- service pages;
-- solution pages for vehicle fleets;
-- equipment catalog;
-- equipment detail pages via dynamic `[slug].jsx` routes;
-- legal pages, sitemap, and 404 page.
+* Home page
+* Service pages
+* Fleet solution pages
+* Equipment catalog
+* Dynamic equipment detail pages
+* Legal pages
+* Sitemap
+* Custom 404 page
 
-Page data is stored in `src/page-data`, so content can be updated separately from section markup.
+Page and catalog data are stored separately in `src/page-data`, allowing content to be updated independently from section markup.
 
 ## Client-Side Logic
 
-Client-side modules are initialized in `src/main.js`, including:
+Client-side modules include:
 
-- header and navigation;
-- modals;
-- sliders and lightbox;
-- cookie banner;
-- forms and validation;
-- region map;
-- catalog filters;
-- cart;
-- tabs and additional UI behavior.
+* Header and navigation
+* Modal windows
+* Sliders and lightbox
+* Cookie banner
+* Forms and validation
+* Region map
+* Catalog filters
+* Cart
+* Tabs
+* Other interactive UI behavior
 
-Global HTML structure, SEO metadata, favicons, manifest, header/footer, and shared components are configured in `src/global.jsx`.
+## Getting Started
 
-## Build and Deployment
+### Requirements
 
-After running:
+* Node.js
+* npm
+
+Clone the repository:
+
+```bash
+git clone https://github.com/maminn174/gps-monitoring-website.git
+cd gps-monitoring-website
+```
+
+Install dependencies:
+
+```bash
+npm ci
+```
+
+Run the development server:
+
+```bash
+npm start
+```
+
+Build the production version:
 
 ```bash
 npm run build
 ```
 
-the production files are generated in `dist`. This directory can be deployed to a static hosting provider or served by a web server.
+Preview the production build:
 
-The project includes `.htaccess` files in the project root and in `public/.htaccess` for Apache-based hosting.
+```bash
+npm run preview
+```
 
-## Docker
+## Code Quality
 
-The project includes a `Dockerfile` that:
+Run all checks:
 
-1. installs dependencies with `npm ci`;
-2. runs `npm run lint:fix`;
-3. builds the website with `npm run build`.
+```bash
+npm run lint
+```
 
-## Formatting and Code Quality
+Automatically fix supported formatting and linting issues:
 
-Before publishing changes, run:
+```bash
+npm run lint:fix
+```
+
+Before publishing changes:
 
 ```bash
 npm run lint
 npm run build
 ```
 
-To apply automatic formatting and lint fixes:
+## Deployment
 
-```bash
-npm run lint:fix
-```
+Production files are generated in the `dist` directory.
+
+The project includes configuration for Apache-based hosting and a Dockerfile for building the production version.
