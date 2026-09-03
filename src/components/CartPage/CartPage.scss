@@ -1,0 +1,17 @@
+.cart-page {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-block: fluid(60, 30);
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+    height: 100%;
+
+    @include laptop {
+      grid-template-columns: 1fr;
+    }
+  }
+}

@@ -1,0 +1,158 @@
+.industries {
+  &__list {
+    display: grid;
+    grid-template-rows: 171px 171px 209px;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 20px;
+
+    @include tablet {
+      grid-template-rows: none;
+      grid-template-columns: 1fr;
+      grid-auto-rows: minmax(180px, auto);
+    }
+
+    @include mobile-s {
+      grid-template-rows: repeat(6, 250px) auto;
+    }
+  }
+
+  &__item {
+    flex-shrink: 0;
+    display: grid;
+    min-width: 0;
+
+    @include mobile {
+      flex-shrink: 1;
+    }
+
+    &--featured {
+      grid-area: 1 / 1 / 3 / 4;
+
+      @include tablet {
+        grid-area: auto;
+        grid-column: 1 / -1;
+        min-height: 260px;
+
+        .industries__image {
+          width: 330px;
+        }
+      }
+
+      @include mobile {
+        min-height: 200px;
+
+        .industries__image {
+          width: 275px;
+        }
+      }
+
+      @include mobile-s {
+        .industries__image {
+          width: 235px;
+        }
+      }
+    }
+
+    &--wide-top {
+      grid-area: 1 / 4 / 2 / 7;
+
+      @include tablet {
+        grid-area: auto;
+      }
+    }
+
+    &--wide-middle {
+      grid-area: 2 / 4 / 3 / 7;
+
+      @include tablet {
+        grid-area: auto;
+      }
+    }
+
+    &--compact-start {
+      grid-area: 3 / 1 / 4 / 3;
+
+      @include tablet {
+        grid-area: auto;
+      }
+    }
+
+    &--compact-center {
+      grid-area: 3 / 3 / 4 / 5;
+
+      @include tablet {
+        grid-area: auto;
+      }
+    }
+
+    &--compact-end {
+      grid-area: 3 / 5 / 4 / 7;
+
+      @include tablet {
+        grid-area: auto;
+      }
+    }
+
+    &--action {
+      grid-area: 4 / 1 / 5 / 7;
+
+      @include tablet {
+        grid-area: auto;
+      }
+    }
+  }
+
+  &__card {
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    background-image: url('@/assets/images/industries/IndustriesSVG.svg');
+    background-position: right #{fluid-negative(80, 40)} top
+      #{fluid-negative(80, 50)};
+    background-size: min(#{fluid(380, 260)}, 85%) auto;
+    background-repeat: no-repeat;
+  }
+
+  &__item--featured &__card {
+    background-position: right #{fluid(0, -60)} top #{fluid(0, -15)};
+    background-size: min(#{fluid(481, 340)}, 90%) auto;
+  }
+
+  &__item--wide-top &__card,
+  &__item--wide-middle &__card {
+    background-position: right #{fluid-negative(80, 40)} top
+      #{fluid-negative(85, -15)};
+  }
+
+  &__item--compact-start &__card,
+  &__item--compact-center &__card,
+  &__item--compact-end &__card {
+    background-position: right #{fluid-negative(90, 40)} top
+      #{fluid-negative(30, -15)};
+  }
+
+  &__image {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    max-width: 85%;
+    height: auto;
+  }
+
+  &__title {
+    z-index: 1;
+    width: 45%;
+
+    @include tablet {
+      width: 30%;
+    }
+
+    @include mobile {
+      width: 50%;
+    }
+
+    @include mobile-s {
+      width: 70%;
+    }
+  }
+}

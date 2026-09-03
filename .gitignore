@@ -1,0 +1,13 @@
+node_modules/
+.env*
+!.env.example
+.vscode/
+.idea/
+.gitea/
+*.code-workspace
+dist/
+build/
+*.log
+.cache/
+*.tmp
+*.DS_Store

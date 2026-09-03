@@ -1,0 +1,16 @@
+.product-description {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  &__description {
+    font-size: var(--base-text-size);
+    font-weight: 500;
+  }
+
+  &__section {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+}

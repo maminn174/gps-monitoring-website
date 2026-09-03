@@ -1,0 +1,14 @@
+.cart-summary {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: var(--card-padding);
+  background-color: var(--color-white);
+  border-radius: var(--border-radius);
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+}

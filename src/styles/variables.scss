@@ -1,0 +1,34 @@
+:root {
+  --color-red: #c60a0a;
+  --color-dark: #333333;
+  --color-white: #ffffff;
+  --color-green: #20cd20;
+  --color-background: #f6f7f8;
+  --color-advantum: #f38222;
+
+  --cardbg-yellow: #f1ebd6;
+  --cardbg-gray: #eaecee;
+  --cardbg-blue: #e2e8f0;
+  --cardbg-dark: #9299a2;
+
+  --base-text-size: #{fluid(18, 15)};
+  --subtitle-text-size: 24px;
+
+  --button-hover: linear-gradient(90deg, #9e0606);
+
+  --button-height: 55px;
+
+  --container-width: 1200px;
+  --container-padding-x: 20px;
+
+  --font-family-main: 'Golos Text', sans-serif;
+
+  --border-radius-button: 40px;
+  --border-radius: 12px;
+
+  --transition-duration: 0.2s;
+
+  --default-shadow: 0 8px 32px 0 rgba(1, 9, 55, 0.1);
+
+  --card-padding: #{fluid(28, 16)} #{fluid(32, 16)};
+}

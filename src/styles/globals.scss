@@ -1,0 +1,70 @@
+html {
+  scroll-padding-top: 100px;
+  scrollbar-color: var(--color-red);
+
+  &::-webkit-scrollbar {
+    width: 16px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #d9dde2;
+    border-radius: 999px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, var(--color-red), #b50707);
+    border: 2px solid #d9dde2;
+    border-radius: 999px;
+
+    @include hover {
+      background: #8f0606;
+    }
+  }
+
+  &.is-lock {
+    overflow: hidden;
+  }
+}
+
+a,
+button,
+input,
+textarea,
+svg * {
+  transition-duration: var(--transition-duration);
+}
+
+a {
+  @include hover {
+    color: var(--color-red);
+  }
+}
+
+a:where([class]) {
+  text-decoration: none;
+}
+
+body {
+  overflow-x: clip;
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-family-main);
+  font-size: 16px;
+  color: var(--color-dark);
+  background-color: var(--color-background);
+}
+
+main {
+  flex-grow: 1;
+}
+
+.body {
+  &--lock {
+    overflow: hidden;
+  }
+}
+
+h2,
+h3 {
+  line-height: 1.3;
+}

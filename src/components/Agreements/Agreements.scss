@@ -1,0 +1,50 @@
+.agreements {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  &--steps {
+    flex-direction: row;
+
+    @include mobile {
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .agreements__wrapper {
+      align-items: center;
+
+      @include mobile {
+        align-items: start;
+      }
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    gap: 8px;
+  }
+
+  &__label {
+    font-size: 14px;
+    font-weight: 400;
+
+    @include mobile-s {
+      font-size: 12px;
+    }
+  }
+
+  &__link {
+    color: #0e3eab;
+    cursor: pointer;
+  }
+
+  &__checkbox {
+    @include square(20px);
+
+    min-width: 20px;
+    accent-color: var(--color-red);
+  }
+}

@@ -1,0 +1,96 @@
+.problem-card {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 16px;
+  height: 100%;
+  padding: var(--card-padding);
+  border-radius: var(--border-radius);
+
+  @include mobile-s {
+    grid-template-columns: 1fr;
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    @include mobile-s {
+      order: 2;
+    }
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__badge {
+    --iconSize: 28px;
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: fit-content;
+    padding: 12px 20px;
+    font-weight: 700;
+    color: var(--color-dark);
+    background-color: var(--color-white);
+    border-radius: var(--border-radius);
+
+    @include fluid-text(18, 15);
+
+    &-icon {
+      color: #ff7700;
+
+      &--checkmark {
+        color: #20cd20;
+      }
+    }
+
+    svg {
+      fill: currentColor;
+    }
+  }
+
+  &__media {
+    align-self: center;
+
+    @include mobile-s {
+      order: 1;
+    }
+  }
+
+  &__image {
+    max-width: 100%;
+    height: auto;
+    margin-left: auto;
+
+    @include mobile-s {
+      margin-left: unset;
+      margin-right: auto;
+    }
+
+    &--transport-problem-image {
+      width: fluid(205, 170);
+    }
+  }
+
+  &--yellow {
+    background-color: var(--cardbg-yellow);
+  }
+
+  &--blue {
+    background-color: var(--cardbg-blue);
+  }
+
+  &--gray {
+    background-color: var(--cardbg-gray);
+  }
+
+  &--dark {
+    color: var(--color-white);
+    background-color: var(--cardbg-dark);
+  }
+}

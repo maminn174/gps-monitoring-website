@@ -1,0 +1,169 @@
+.monitoring-system {
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+
+    @include mobile {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__header {
+    gap: 0;
+  }
+
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+
+    @include mobile {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--card-padding);
+    background-color: var(--color-white);
+    border-radius: var(--border-radius);
+
+    @include mobile {
+      flex-direction: row;
+    }
+  }
+
+  &__text {
+    font-size: var(--base-text-size);
+    font-weight: 500;
+  }
+
+  &-slider {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-top: 20px;
+
+    @include mobile {
+      gap: 15px;
+    }
+
+    @include mobile-s {
+      gap: 8px;
+    }
+
+    &__viewport {
+      overflow: hidden;
+      width: 100%;
+    }
+
+    &__track {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    &__image {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: var(--border-radius);
+    }
+
+    &__slide {
+      flex: 0 0 100%;
+    }
+
+    &__button {
+      position: relative;
+      aspect-ratio: 1;
+      height: 40px;
+      padding: 0;
+      background-color: var(--color-red);
+      border: none;
+      border-radius: 100%;
+      cursor: pointer;
+
+      @include hover {
+        background-image: var(--button-hover);
+      }
+
+      @include mobile-s {
+        height: 25px;
+      }
+
+      &::after {
+        @include square(13px);
+
+        content: '';
+        position: absolute;
+        top: 14px;
+        left: 15px;
+        display: block;
+        border-bottom: 3px solid var(--color-white);
+        border-left: 3px solid var(--color-white);
+        transform: rotate(45deg);
+
+        @include mobile-s {
+          @include square(9px);
+
+          top: 8px;
+          left: 9px;
+        }
+      }
+
+      &--next::after {
+        top: 14px;
+        left: 11px;
+        transform: rotate(225deg);
+
+        @include mobile-s {
+          top: 8px;
+          left: 6px;
+        }
+      }
+    }
+
+    &__zoom {
+      position: relative;
+      overflow: hidden;
+      display: block;
+      width: 100%;
+      padding: 0;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+
+      &:hover .monitoring-system-slider__overlay {
+        opacity: 1;
+      }
+    }
+
+    &__overlay {
+      @include flex-center;
+
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transition: var(--transition-duration);
+    }
+
+    &__icon {
+      @include square(48px);
+      @include flex-center;
+
+      position: relative;
+      background-color: var(--color-red);
+      border-radius: 50%;
+    }
+
+    &__svg {
+      position: absolute;
+      width: 24px;
+      height: 24px;
+      color: var(--color-white);
+    }
+  }
+}

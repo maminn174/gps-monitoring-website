@@ -1,0 +1,36 @@
+.equipment-hero {
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: fluid(30, 20);
+  }
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    @include mobile {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  &__comment {
+    font-size: 14px;
+    font-weight: 400;
+  }
+
+  &__actions {
+    display: flex;
+    gap: 20px;
+
+    @include mobile-s {
+      flex-direction: column;
+    }
+  }
+}

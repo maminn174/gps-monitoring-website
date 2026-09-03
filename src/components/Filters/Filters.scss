@@ -1,0 +1,71 @@
+.filters {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    @include tablet {
+      display: none;
+
+      &.is-open {
+        display: flex;
+      }
+    }
+
+    &.is-changed {
+      .filters__button {
+        display: flex;
+      }
+    }
+  }
+
+  &__field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 16px;
+  }
+
+  &__toggle {
+    justify-self: flex-end;
+    display: none;
+
+    @include tablet {
+      display: flex;
+    }
+  }
+
+  &__label {
+    @include fluid-text(16, 15);
+
+    margin-bottom: 10px;
+    font-weight: 700;
+  }
+
+  &__button {
+    position: sticky;
+    bottom: 16px;
+    display: none;
+    width: 100%;
+
+    @include tablet {
+      bottom: 12px;
+    }
+  }
+
+  &__checkbox {
+    @include fluid-text(16, 15);
+
+    display: flex;
+    gap: 10px;
+    font-weight: 500;
+
+    &-input {
+      @include square(20px);
+    }
+  }
+}

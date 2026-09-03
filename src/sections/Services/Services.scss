@@ -1,0 +1,195 @@
+.services {
+  .section__body {
+    min-width: 0;
+  }
+
+  &__scroller {
+    overflow-x: auto;
+    min-width: 0;
+    margin-block: -16px 0;
+    margin-right: calc(
+      -1 *
+        max(var(--container-padding-x), (100dvw - var(--container-width)) / 2)
+    );
+    padding-block: 16px 32px;
+    scrollbar-color: var(--color-red) #d9dde2;
+
+    &::-webkit-scrollbar {
+      height: 16px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: #d9dde2;
+      border-radius: 999px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: var(--color-red);
+      border-radius: 999px;
+    }
+  }
+
+  &__cards {
+    display: flex;
+    gap: 20px;
+    width: max-content;
+    min-width: 100%;
+    padding-bottom: 16px;
+  }
+
+  &__card {
+    flex-shrink: 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 380px;
+    padding: var(--card-padding);
+    background-position: right bottom;
+    background-repeat: no-repeat;
+    border-radius: var(--border-radius);
+    transition-duration: var(--transition-duration);
+
+    @include hover {
+      border-color: var(--accent-color);
+      box-shadow: var(--default-shadow);
+      transform: translateY(-4px);
+    }
+
+    @include mobile {
+      width: 320px;
+    }
+
+    @include mobile-s {
+      width: 270px;
+    }
+
+    &:first-child {
+      gap: 34px;
+    }
+
+    &--blue {
+      background-color: var(--cardbg-blue);
+    }
+
+    &--yellow {
+      background-color: var(--cardbg-yellow);
+    }
+
+    &--dark {
+      background-color: var(--cardbg-dark);
+    }
+
+    &--gray {
+      background-color: var(--cardbg-gray);
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    li::before {
+      content: '';
+
+      @include square(30px);
+
+      flex: 0 0 30px;
+      margin-top: calc((24px - 30px) / 2);
+      background: url('@/assets/images/services/checkmark.svg') center / contain
+        no-repeat;
+    }
+  }
+
+  &__item {
+    display: flex;
+    align-items: flex-start;
+    gap: 5px;
+    font-size: var(--base-text-size);
+    font-weight: 500;
+    line-height: 24px;
+  }
+
+  &__card-link {
+    text-decoration: none;
+    color: inherit;
+
+    &::after {
+      content: '';
+      position: absolute;
+      z-index: 1;
+      inset: 0;
+    }
+  }
+
+  &__text {
+    margin-bottom: 6px;
+    font-size: var(--base-text-size);
+    color: var(--color-red);
+  }
+
+  &__actions {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-top: auto;
+  }
+
+  &__button {
+    z-index: 2;
+    width: 100%;
+
+    &--outline {
+      font-weight: 600;
+      color: var(--color-red);
+      background: transparent;
+      border: 2px solid var(--color-red);
+
+      &:hover {
+        color: var(--color-white);
+        background: var(--color-red);
+      }
+    }
+  }
+
+  &__badge {
+    @include flex-center;
+
+    position: absolute;
+    top: 0;
+    right: 18px;
+    width: 52px;
+    height: 90px;
+    font-weight: 500;
+    color: var(--color-white);
+    background-image: linear-gradient(90deg, var(--color-red), #b50707);
+    border-radius: 0 0 12px 12px;
+    box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.6);
+
+    @include mobile {
+      width: 45px;
+      height: 70px;
+      font-size: 14px;
+    }
+
+    @include mobile-s {
+      width: 36px;
+      height: 60px;
+      font-size: 13px;
+    }
+  }
+
+  &__link {
+    z-index: 2;
+    font-weight: 500;
+    color: var(--color-red);
+    background: transparent;
+    border: 2px var(--color-red) solid;
+
+    @include hover {
+      color: var(--color-white);
+      background: var(--color-red);
+    }
+  }
+}

@@ -1,0 +1,45 @@
+.marker {
+  &-list {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    @include mobile {
+      gap: 4px;
+    }
+
+    li {
+      padding-left: 28px;
+
+      @include mobile-s {
+        padding-left: 24px;
+      }
+
+      &::before {
+        content: '';
+        align-self: center;
+        position: absolute;
+        left: 0;
+        width: 20px;
+        height: 20px;
+        background-color: var(--color-white);
+        border: 5px solid var(--color-red);
+        border-radius: 50%;
+
+        @include mobile-s {
+          width: 15px;
+          height: 15px;
+          border: 4px solid var(--color-red);
+        }
+      }
+    }
+  }
+
+  &-item {
+    @include fluid-text(18, 15);
+
+    position: relative;
+    font-weight: 500;
+  }
+}

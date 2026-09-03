@@ -1,0 +1,28 @@
+.burger-button {
+  @include square(44px);
+
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  background-color: var(--color-red);
+  border: none;
+  border-radius: 50%;
+
+  &:hover {
+    background-color: #b50607;
+  }
+
+  @include laptop {
+    order: 3;
+    flex-shrink: 0;
+    display: inline-flex;
+    margin-left: 16px;
+  }
+}
+
+.burger-line {
+  width: 20px;
+  height: 2px;
+  background-color: var(--color-white);
+}

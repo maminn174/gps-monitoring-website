@@ -1,0 +1,97 @@
+.action-banner {
+  &__inner {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    padding: 56px 100px;
+    background-image: linear-gradient(90deg, var(--color-red), #f33737);
+    border-radius: 52px;
+
+    @include tablet {
+      padding: 35px 60px;
+    }
+
+    @include mobile {
+      gap: 16px;
+      padding: 20px;
+      border-radius: 12px;
+    }
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+    color: var(--color-white);
+
+    @include mobile {
+      gap: 8px;
+    }
+  }
+
+  &__title {
+    @include fluid-text(44, 24);
+
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  &__description {
+    @include fluid-text(18, 15);
+
+    font-weight: 500;
+  }
+
+  &__buttons {
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    @include mobile-s {
+      flex-direction: column;
+      width: 100%;
+    }
+  }
+
+  &__button {
+    font-weight: 600;
+    color: var(--color-dark);
+    background: var(--color-white);
+
+    @include hover {
+      background: #e5e5e5;
+    }
+  }
+
+  &__link {
+    @include flex-center;
+
+    gap: 12px;
+    background: var(--color-dark);
+
+    @include hover {
+      color: var(--color-white);
+      background: #404040;
+    }
+  }
+
+  &__phone-icon {
+    @include square(20px);
+  }
+
+  &__logo {
+    position: absolute;
+    z-index: 0;
+    right: 5%;
+    bottom: 0;
+    color: var(--color-white);
+
+    @include mobile {
+      width: 150px;
+    }
+  }
+}

@@ -1,0 +1,12 @@
+.equipment-catalog-page {
+  &__header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__lead {
+    max-width: 920px;
+    margin-top: 16px;
+    margin-bottom: 32px;
+  }
+}

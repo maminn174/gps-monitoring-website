@@ -1,0 +1,60 @@
+.steps-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  height: 100%;
+  padding: var(--card-padding);
+  background-color: var(--cardbg-gray);
+  border-radius: var(--border-radius);
+
+  @include mobile {
+    gap: 8px;
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 12px;
+    font-weight: 500;
+
+    @include mobile {
+      margin-bottom: 8px;
+    }
+  }
+
+  &__number {
+    @include fluid-text(62, 30);
+
+    margin-bottom: 12px;
+    font-weight: 700;
+    line-height: 1;
+    color: var(--color-red);
+  }
+
+  &__time {
+    @include flex-center;
+
+    gap: 12px;
+    width: 100%;
+    margin-top: auto;
+    padding-block: 12px;
+    padding-inline: 20px;
+    background-color: var(--color-white);
+    border-radius: var(--border-radius);
+  }
+
+  &__annotation {
+    @include fluid-text(18, 15);
+
+    font-weight: 700;
+    text-wrap: nowrap;
+  }
+
+  &__icon {
+    @include square(30px);
+
+    color: var(--color-red);
+    fill: currentColor;
+  }
+}

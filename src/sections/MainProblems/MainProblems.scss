@@ -1,0 +1,44 @@
+.main-problems {
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+
+    @include tablet {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__item {
+    &--action {
+      grid-row: span 2;
+
+      @include tablet {
+        order: 1;
+        grid-row: auto;
+      }
+    }
+  }
+
+  &__card {
+    height: 100%;
+
+    @include tablet {
+      align-items: center;
+    }
+  }
+
+  &__media {
+    @include flex-center;
+
+    flex-shrink: 0;
+  }
+
+  .default-card__media.main-problems__media {
+    @include mobile-s {
+      align-self: flex-start;
+      justify-content: flex-start;
+      margin-inline: 0 auto;
+    }
+  }
+}

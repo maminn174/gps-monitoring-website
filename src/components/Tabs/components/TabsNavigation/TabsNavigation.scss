@@ -1,0 +1,25 @@
+.tabs-navigation {
+  display: flex;
+  flex-wrap: wrap;
+  gap: fluid(20, 12);
+
+  &__button {
+    padding: 18px 24px;
+    font-weight: 600;
+    background-color: var(--color-white);
+    border: 1px solid var(--color-red);
+    border-radius: var(--border-radius-button);
+    cursor: pointer;
+    user-select: none;
+
+    @include hover {
+      color: var(--color-red);
+    }
+
+    &.is-active {
+      color: var(--color-white);
+      background-color: var(--color-red);
+      pointer-events: none;
+    }
+  }
+}

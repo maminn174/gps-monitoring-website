@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+User-agent: Yandex
+Allow: /
+Clean-param: type&source&fa821dba_redirect

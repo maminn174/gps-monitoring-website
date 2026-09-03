@@ -1,0 +1,37 @@
+.privacy {
+  margin-bottom: fluid(60, 40);
+  padding: 56px 60px;
+  background: var(--color-white);
+  border-radius: var(--border-radius);
+
+  @include mobile {
+    padding: 20px;
+  }
+
+  &__title {
+    @include fluid-text(38, 24);
+
+    margin-bottom: fluid(48, 20);
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  &__subtitle {
+    @include fluid-text(24, 20);
+
+    margin-bottom: fluid(18, 15);
+    font-weight: 700;
+  }
+
+  &__text {
+    font-size: var(--base-text-size);
+    font-weight: 500;
+    white-space: pre-line;
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: fluid(36, 24);
+    }
+  }
+}

@@ -1,0 +1,32 @@
+.more-block {
+  @include flex-center(true);
+
+  position: relative;
+  gap: fluid(8, 4);
+  transition-duration: var(--transition-duration);
+
+  @include hover {
+    .more-block__link,
+    .more-block__icon {
+      color: var(--color-dark);
+    }
+  }
+
+  &__link {
+    font-size: var(--base-text-size);
+    font-weight: 500;
+    color: var(--color-red);
+
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+    }
+  }
+
+  &__icon {
+    width: 30px;
+    height: 30px;
+    color: var(--color-red);
+  }
+}

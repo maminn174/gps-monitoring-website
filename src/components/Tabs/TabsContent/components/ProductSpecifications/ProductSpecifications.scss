@@ -1,0 +1,27 @@
+.product-specifications {
+  &__table {
+    width: 100%;
+    background-color: var(--color-white);
+    border: 1px solid var(--cardbg-gray);
+    border-radius: var(--border-radius);
+    border-collapse: separate;
+  }
+
+  &__item {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 12px;
+    font-size: var(--base-text-size);
+    justify-items: flex-start;
+
+    &:not(:last-child) {
+      border-block-end: 1px solid var(--cardbg-gray);
+    }
+  }
+
+  &__download {
+    align-self: flex-end;
+    text-decoration: none;
+    color: var(--color-dark);
+  }
+}

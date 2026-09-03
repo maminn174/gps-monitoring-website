@@ -1,0 +1,72 @@
+.habs {
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: fluid(20, 12);
+    padding-block: 30px;
+
+    @include mobile {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include mobile-s {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__card {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    height: 100%;
+    padding: var(--card-padding);
+    background-color: var(--color-white);
+    border-radius: var(--border-radius);
+    transition-duration: var(--transition-duration);
+
+    @include hover {
+      border-color: var(--accent-color);
+      box-shadow: var(--default-shadow);
+      transform: translateY(-4px);
+    }
+  }
+
+  &__link {
+    color: var(--color-dark);
+
+    &::after {
+      content: '';
+      position: absolute;
+      z-index: 1;
+      inset: 0;
+    }
+  }
+
+  &__icon {
+    @include square(fluid(60, 40));
+    @include flex-center(true);
+
+    --iconSize: 30px;
+
+    padding: 15px;
+    color: var(--color-red);
+    background-color: var(--color-background);
+    border-radius: 50%;
+    fill: currentColor;
+
+    svg {
+      flex-shrink: 0;
+      width: fluid(30, 20);
+      height: fluid(30, 20);
+    }
+  }
+
+  &__arrow-icon {
+    --iconSize: #{fluid(20, 15)};
+
+    margin-left: auto;
+    color: var(--color-red);
+    fill: currentColor;
+  }
+}

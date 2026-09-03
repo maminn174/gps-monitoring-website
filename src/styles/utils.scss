@@ -1,0 +1,102 @@
+.container {
+  max-width: calc(var(--container-width) + (var(--container-padding-x) * 2));
+  margin-inline: auto;
+  padding-inline: var(--container-padding-x);
+}
+
+.visually-hidden {
+  position: absolute;
+  overflow: hidden;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  white-space: nowrap;
+  border: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(100%);
+}
+
+.input {
+  width: 100%;
+  height: 55px;
+  padding-inline: 20px;
+  border: 1px solid var(--cardbg-gray);
+  border-radius: var(--border-radius-button);
+}
+
+input[type='checkbox'] {
+  accent-color: var(--color-red);
+}
+
+.page-title {
+  @include fluid-text(40, 24);
+
+  font-weight: 900;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+
+.page-subtitle {
+  @include fluid-text(35, 24);
+}
+
+.page-description {
+  @include fluid-text(18, 15);
+
+  font-weight: 500;
+}
+
+.card-title {
+  @include fluid-text(24, 18);
+
+  font-weight: 700;
+}
+
+.visible-laptop {
+  @include laptop-above {
+    display: none !important;
+  }
+}
+
+.hidden-laptop {
+  @include laptop {
+    display: none !important;
+  }
+}
+
+.visible-tablet {
+  @include tablet-above {
+    display: none !important;
+  }
+}
+
+.hidden-tablet {
+  @include tablet {
+    display: none !important;
+  }
+}
+
+.visible-mobile {
+  @include mobile-above {
+    display: none !important;
+  }
+}
+
+.hidden-mobile {
+  @include mobile {
+    display: none !important;
+  }
+}
+
+.visible-mobile-s {
+  @include mobile-s-above {
+    display: none !important;
+  }
+}
+
+.hidden-mobile-s {
+  @include mobile-s {
+    display: none !important;
+  }
+}

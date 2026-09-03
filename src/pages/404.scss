@@ -1,0 +1,37 @@
+.error {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding-bottom: 100px;
+
+  @include mobile {
+    padding-bottom: 60px;
+  }
+
+  @include mobile-s {
+    padding-bottom: 28px;
+  }
+
+  &__header {
+    text-align: center;
+  }
+
+  &__title {
+    font-weight: 700;
+    text-transform: uppercase;
+
+    @include fluid-text(80, 35);
+  }
+
+  &__text {
+    @include fluid-text(35, 16);
+  }
+
+  &__button {
+    @include hover {
+      color: var(--color-white);
+    }
+  }
+}

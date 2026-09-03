@@ -1,0 +1,44 @@
+.fuel-control-variants {
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+
+    @include mobile {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__card {
+    flex-direction: column;
+    gap: 24px;
+
+    @include mobile {
+      flex-direction: column-reverse;
+    }
+  }
+
+  &__header {
+    gap: 8px;
+  }
+
+  &__image {
+    @include mobile-s {
+      width: 220px;
+
+      &:last-child {
+        width: 110px;
+      }
+    }
+  }
+
+  &__number {
+    @include mobile {
+      top: 0;
+    }
+  }
+
+  &__media {
+    margin-inline: unset;
+  }
+}

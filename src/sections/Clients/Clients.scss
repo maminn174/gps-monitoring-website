@@ -1,0 +1,76 @@
+.clients {
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+
+    @include tablet {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__card {
+    @include fluid-text(24, 18);
+
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 28px 32px 12px;
+    border-radius: var(--border-radius);
+
+    &--yellow {
+      background-color: var(--cardbg-yellow);
+    }
+
+    &--blue {
+      background-color: var(--cardbg-blue);
+    }
+
+    @include tablet {
+      padding: 20px;
+    }
+
+    @include mobile-s {
+      flex-direction: column;
+
+      @include flex-center;
+
+      padding: 16px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+
+    @include mobile-s {
+      order: 2;
+    }
+  }
+
+  &__list {
+    margin-top: 20px;
+    font-size: var(--base-text-size);
+    font-weight: 400;
+  }
+
+  &__list-item {
+    position: relative;
+    margin-bottom: 10px;
+    font-size: var(--base-text-size);
+    font-weight: 500;
+  }
+
+  &__image {
+    align-self: center;
+
+    @include tablet {
+      width: 10%;
+    }
+
+    @include mobile-s {
+      align-self: flex-start;
+      width: 30%;
+    }
+  }
+}

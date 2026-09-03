@@ -1,0 +1,73 @@
+.data-transfer-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  height: 100%;
+  padding: var(--card-padding);
+  border-radius: var(--border-radius);
+
+  @include tablet {
+    flex-direction: row;
+  }
+
+  @include mobile-s {
+    flex-direction: column;
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    gap: fluid(16, 12);
+  }
+
+  &__media {
+    flex-shrink: 0;
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    gap: fluid(20, 12);
+  }
+
+  &__number {
+    @include flex-center(true);
+
+    padding: fluid(16, 12);
+    font-size: fluid(24, 18);
+    font-weight: 700;
+    color: var(--color-red);
+    background-color: var(--color-white);
+    border-radius: var(--border-radius);
+  }
+
+  &--yellow {
+    background-color: var(--cardbg-yellow);
+  }
+
+  &--gray {
+    background-color: var(--cardbg-gray);
+  }
+
+  &--blue {
+    background-color: var(--cardbg-blue);
+  }
+
+  &--dark {
+    color: var(--color-white);
+    background-color: var(--cardbg-dark);
+  }
+}
+
+.data-transfer-card-rnis {
+  @include mobile {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+  }
+
+  .data-transfer-card__image {
+    width: fluid(512, 250);
+  }
+}

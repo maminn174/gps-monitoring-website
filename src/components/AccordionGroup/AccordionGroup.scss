@@ -1,0 +1,43 @@
+.accordion-group {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  &__item {
+    padding: 12px 28px;
+    background-color: var(--color-white);
+    border-radius: var(--border-radius);
+
+    @include mobile-s {
+      flex-direction: column;
+      row-gap: 20px;
+    }
+  }
+
+  &--has-counter {
+    --accordionGroupCounterHeight: #{fluid(60, 40)};
+
+    list-style: none;
+    counter-reset: custom-counter;
+
+    .accordion-group__item {
+      display: flex;
+      column-gap: 20px;
+      counter-increment: custom-counter;
+
+      &::before {
+        @include flex-center;
+
+        content: counter(custom-counter, decimal-leading-zero);
+        width: fit-content;
+        min-width: fluid(60, 40);
+        height: var(--accordionGroupCounterHeight);
+        font-size: 20px;
+        font-weight: 600;
+        color: var(--color-red);
+        background-color: var(--color-background);
+        border-radius: var(--border-radius);
+      }
+    }
+  }
+}

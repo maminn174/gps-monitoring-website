@@ -1,0 +1,39 @@
+.page-up {
+  position: fixed;
+  right: 50px;
+  bottom: 140px;
+  aspect-ratio: 1;
+  padding: 0;
+  background-color: var(--color-red);
+  border: none;
+  border-radius: 100%;
+  visibility: hidden;
+  opacity: 0;
+  cursor: pointer;
+  pointer-events: none;
+
+  @include square(40px);
+
+  @include hover {
+    background-image: var(--button-hover);
+  }
+
+  &.is-visible {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  &::after {
+    @include square(13px);
+
+    content: '';
+    position: absolute;
+    top: 16px;
+    left: 14px;
+    display: block;
+    border-bottom: 3px solid var(--color-white);
+    border-left: 3px solid var(--color-white);
+    transform: rotate(135deg);
+  }
+}

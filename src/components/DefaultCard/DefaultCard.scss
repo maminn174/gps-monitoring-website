@@ -1,0 +1,88 @@
+.default-card {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  column-gap: 12px;
+  height: 100%;
+  padding: var(--card-padding);
+  background-color: var(--color-white);
+  border-radius: var(--border-radius);
+
+  @include tablet {
+    padding: 20px;
+  }
+
+  @include mobile-s {
+    flex-direction: column-reverse;
+    gap: 12px;
+    padding: 16px;
+  }
+
+  &--yellow {
+    background-color: var(--cardbg-yellow);
+  }
+
+  &--blue {
+    background-color: var(--cardbg-blue);
+  }
+
+  &--gray {
+    background-color: var(--cardbg-gray);
+  }
+
+  &--dark {
+    color: var(--color-white);
+    background-color: var(--cardbg-dark);
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+
+    @include mobile-s {
+      gap: 8px;
+    }
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 16px;
+
+    @include tablet {
+      justify-content: center;
+      gap: 8px;
+    }
+
+    @include mobile-s {
+      gap: 8px;
+    }
+  }
+
+  &__description {
+    font-size: var(--base-text-size);
+    font-weight: 500;
+  }
+
+  &__media {
+    @include mobile-s {
+      margin-inline: auto;
+    }
+  }
+
+  &__number {
+    position: absolute;
+    z-index: 0;
+    right: 16px;
+    bottom: 0;
+    font-weight: 700;
+    line-height: 1;
+    color: var(--color-dark);
+    opacity: 0.1;
+
+    @include fluid-text(212, 180);
+  }
+}

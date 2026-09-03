@@ -1,0 +1,108 @@
+.hero {
+  &:has(.hero__integration-icon--fuel) {
+    .hero__integration-icons {
+      left: 40%;
+
+      @include tablet {
+        top: 50%;
+        left: 30%;
+      }
+
+      @include mobile {
+        top: 70%;
+      }
+    }
+  }
+
+  &__integration {
+    &-icons {
+      position: absolute;
+      top: 75%;
+      left: 16%;
+      display: flex;
+      gap: 10px;
+
+      @include laptop {
+        left: 5%;
+        flex-wrap: wrap;
+      }
+
+      @include tablet {
+        top: 50%;
+      }
+
+      @include mobile {
+        top: 75%;
+        left: 12%;
+      }
+
+      @include mobile-s {
+        top: 70%;
+        right: 0;
+        left: 0;
+        gap: 5px;
+      }
+    }
+
+    &-icon {
+      @include flex-center;
+
+      flex-shrink: 0;
+      gap: 16px;
+      height: 60px;
+      padding: 10px 24px;
+      font-size: fluid(20, 15);
+      font-weight: 600;
+      color: var(--color-red);
+      background-color: var(--color-white);
+      border-radius: var(--border-radius);
+      box-shadow: 0 8px 32px 0 rgba(1, 9, 55, 0.1);
+      fill: currentColor;
+
+      @include tablet {
+        padding: 8px 12px;
+      }
+
+      @include mobile {
+        padding: 10px 24px;
+      }
+
+      @include mobile-s {
+        height: 45px;
+        padding: 8px 12px;
+      }
+
+      &--rnis {
+        --iconSize: 105px;
+
+        color: #da1f0f;
+
+        @include mobile-s {
+          --iconSize: 80px;
+        }
+      }
+
+      &--advantum {
+        --iconSize: 105px;
+
+        color: #f38222;
+
+        @include mobile-s {
+          --iconSize: 80px;
+        }
+      }
+
+      &--fuel {
+        --iconSize: #{fluid(35, 25)};
+
+        color: var(--color-red);
+      }
+
+      &--image {
+        @include mobile-s {
+          width: 60px;
+        }
+      }
+    }
+  }
+}

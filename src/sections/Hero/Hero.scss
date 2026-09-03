@@ -1,0 +1,343 @@
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  @include mobile {
+    grid-template-columns: 1fr;
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    row-gap: 32px;
+
+    @include mobile {
+      order: 2;
+      row-gap: 18px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  &__accent {
+    color: var(--color-red);
+  }
+
+  &__description {
+    @include fluid-text(18, 15);
+
+    max-width: 600px;
+    font-weight: 500;
+  }
+
+  &__actions {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 16px;
+
+    @include tablet {
+      gap: 16px;
+      width: max-content;
+    }
+
+    @include mobile-s {
+      flex-direction: column;
+      width: 100%;
+    }
+  }
+
+  &__media {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include mobile {
+      align-self: start;
+    }
+  }
+
+  &__image {
+    display: block;
+    margin-block: auto;
+    margin-inline: auto;
+  }
+
+  &__icons {
+    position: absolute;
+    inset: 0;
+
+    &-button {
+      --delay: 0s;
+
+      @include fluid-text(18, 15);
+      @include flex-center;
+
+      position: absolute;
+      z-index: 2;
+      top: var(--y);
+      left: var(--x);
+      aspect-ratio: 1 / 1;
+      width: clamp(32px, 9%, 49px);
+      background-color: var(--color-red);
+      border: none;
+      border-radius: 50%;
+      cursor: default;
+      transform: translate(-50%, -50%);
+
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        z-index: 0;
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        transform: translate(-50%, -50%) scale(1);
+        pointer-events: none;
+      }
+
+      &::before {
+        background-color: rgba(214, 43, 43, 0.25);
+
+        /* box-shadow: 0 0 18px rgba(214, 43, 43, 0.35); */
+        animation: hero-locator 2s infinite;
+        animation-delay: var(--delay);
+      }
+
+      &::after {
+        border: 4px solid rgba(214, 43, 43, 0.45);
+        animation: hero-locator 2s infinite;
+        animation-delay: calc(var(--delay) + 1s);
+      }
+
+      &--top {
+        aspect-ratio: 74 / 33;
+        width: clamp(52px, 13%, 74px);
+        border-radius: 10px;
+
+        &::before,
+        &::after {
+          width: 100%;
+          height: 100%;
+          border-radius: inherit;
+        }
+      }
+
+      &--left-1 {
+        --x: 20%;
+        --y: 24%;
+        --delay: 0s;
+
+        @include tablet {
+          --y: 14%;
+        }
+
+        @include mobile {
+          --x: 20%;
+          --y: 24%;
+        }
+
+        @include mobile-s {
+          --x: 20%;
+          --y: 14%;
+        }
+      }
+
+      &--left-2 {
+        --x: 15%;
+        --y: 40%;
+        --delay: 0.5s;
+
+        @include tablet {
+          --y: 27%;
+        }
+
+        @include mobile {
+          --x: 15%;
+          --y: 40%;
+        }
+
+        @include mobile-s {
+          --x: 15%;
+          --y: 30%;
+        }
+      }
+
+      &--left-3 {
+        --x: 10%;
+        --y: 56%;
+        --delay: 1s;
+
+        @include tablet {
+          --y: 40%;
+        }
+
+        @include mobile {
+          --x: 10%;
+          --y: 56%;
+        }
+
+        @include mobile-s {
+          --x: 10%;
+          --y: 46%;
+        }
+      }
+
+      &--top-1 {
+        --x: 52%;
+        --y: 14%;
+        --delay: 0s;
+
+        @include tablet {
+          --y: 11%;
+        }
+
+        @include mobile {
+          --x: 52%;
+          --y: 14%;
+        }
+      }
+
+      &--top-2 {
+        --x: 62%;
+        --y: 25%;
+        --delay: 1s;
+
+        @include tablet {
+          --y: 20%;
+        }
+
+        @include mobile {
+          --x: 62%;
+          --y: 25%;
+        }
+      }
+
+      &--top-3 {
+        --x: 70%;
+        --y: 14%;
+        --delay: 0.5s;
+
+        @include tablet {
+          --y: 11%;
+        }
+
+        @include mobile {
+          --x: 70%;
+          --y: 14%;
+        }
+      }
+
+      &--top-installation-1 {
+        --x: 54%;
+        --y: 14%;
+        --delay: 0s;
+
+        @include tablet {
+          --x: 54%;
+          --y: 12%;
+        }
+
+        @include mobile {
+          --x: 53%;
+          --y: 12%;
+        }
+
+        @include mobile-s {
+          --x: 55%;
+          --y: 12%;
+        }
+      }
+
+      &--top-installation-2 {
+        --x: 62%;
+        --y: 33%;
+        --delay: 1s;
+
+        @include tablet {
+          --x: 62%;
+          --y: 28%;
+        }
+
+        @include mobile {
+          --x: 58%;
+          --y: 28%;
+        }
+
+        @include mobile-s {
+          --x: 60%;
+          --y: 37%;
+        }
+      }
+
+      &--top-installation-3 {
+        --x: 70%;
+        --y: 19%;
+        --delay: 0.5s;
+
+        @include tablet {
+          --x: 70%;
+          --y: 17%;
+        }
+
+        @include mobile {
+          --x: 67%;
+          --y: 17%;
+        }
+
+        @include mobile-s {
+          --x: 70%;
+          --y: 23%;
+        }
+      }
+    }
+
+    &--left,
+    &--top {
+      position: absolute;
+      inset: 0;
+    }
+  }
+
+  &__icon {
+    position: relative;
+    z-index: 1;
+    width: 25px;
+    height: 25px;
+    color: var(--color-white);
+    fill: currentColor;
+
+    @include tablet {
+      width: 22px;
+      height: 22px;
+    }
+
+    @include mobile-s {
+      width: 45%;
+    }
+  }
+}
+
+@keyframes hero-locator {
+  0% {
+    opacity: 0.7;
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  70% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(2);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(3);
+  }
+}
